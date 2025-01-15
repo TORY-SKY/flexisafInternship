@@ -45,6 +45,7 @@
         { name: "Tory", age: 24 },
         { name: "Juliana", age: 20 },
       ];
+
       const Names = document.getElementById("names");
 
       const inputField = document.getElementById("name");
@@ -57,7 +58,9 @@
         if(inputValue){
           
 
-            displayNames();
+            // displayNames();
+          inputField.value = "";
+
           namesArray.innerHTML = "";
           namesArray.push(inputValue);
         console.log(namesArray);
@@ -84,7 +87,8 @@
       //sorting by names Aphabetically
       function sortAge(persons) {
         persons.sort((a, b)=>a.localeCompare(b))
-        console.log(persons)
+        console.log("sorted names are below:")
+        console.log( persons)
 
       }
 
