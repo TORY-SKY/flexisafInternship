@@ -1,0 +1,90 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="names"></ul>
+    </table>
+    <input type="text" name="" id="name" />
+    <button onclick="AddName()">Add Names</button>
+    <button onclick="checkUnderAge(namesArray)">Sort Names</button>
+    <script>
+      // arrays
+      const namesArray = [
+        "Ade",
+        "Tolu",
+        "Shola",
+        "Apple",
+        "Rat",
+        "Bola",
+        "Keji",
+        "Femi",
+        "Yemi",
+        "Sola",
+        "Dayo",
+        "Tope",
+        "Kunle",
+        "Nike",
+        "Wale",
+        "Jide",
+        "Seun",
+        "Tunde",
+        "Akin",
+        "Fola",
+      ];
+      const name_age = [
+        { name: "Alice", age: 12 },
+        { name: "Bryan", age: 22 },
+        { name: "Alex", age: 32 },
+        { name: "Edward", age: 12 },
+        { name: "Tory", age: 24 },
+        { name: "Juliana", age: 20 },
+      ];
+      const Names = document.getElementById("names");
+
+      const inputField = document.getElementById("name");
+     
+     
+      //   adding names to the "namesArray" using the .push
+      function AddName() {
+        const inputValue = inputField.value.trim();
+        // add name if the input field is not empty
+        if(inputValue){
+          
+          displayNames();
+          namesArray.innerHTML = "";
+          namesArray.push(inputValue);
+        console.log(namesArray);
+          
+        }else{
+          alert("input a name first")
+        }
+
+
+        // function to display name on the screen
+       function displayNames(){
+          // using (.foreach) to iterate over the names array
+          namesArray.forEach((name, index)=>{
+            const name_list = document.getElementById("names");
+          const li_element = document.createElement("li");
+          li_element.textContent = `${index + 1 + ". " + name}`
+          name_list.appendChild(li_element);
+          inputField.value = "";
+          })
+        }
+
+      }
+
+      //filter
+      function checkUnderAge(persons) {
+        persons.filter((person) => {
+          person.age < 18;
+        });
+        checkUnderAge(name_age);
+        console.log(checkUnderAge(name_age));
+      }
+    </script>
+  </body>
+</html>
