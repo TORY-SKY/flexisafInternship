@@ -13,6 +13,19 @@
     <input type="text" name="" id="name" />
     <button onclick="AddName()">Add Names</button>
     <button onclick="sortAge(namesArray)">Sort Names</button>
+    <button onclick="deleteName(namesArray)">delete added name</button>
+    <div behavior="" direction="" style="
+    font-size: 24px; 
+    font-weight: bold; 
+    text-align: center; 
+    margin-top: 20px; 
+    animation: blink 1.5s infinite;">Add name and check the console</div>
+    <style>
+       @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    </style>
     <script>
       // arrays
       const namesArray = [
@@ -62,7 +75,7 @@
           inputField.value = "";
 
           namesArray.innerHTML = "";
-          namesArray.push(inputValue);
+          namesArray.push(inputValue.toUpperCase());
         console.log(namesArray);
           
         }else{
@@ -91,7 +104,10 @@
         console.log( persons)
 
       }
-
+function deleteName(Names){
+Names.pop();
+console.log(Names);
+}
 
     </script>
   </body>
