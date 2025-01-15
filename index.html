@@ -5,11 +5,14 @@
     <title>Document</title>
   </head>
   <body>
+    <h1>FLEXISAF INTERNSHIP FIRST PRJECT</h1>
+    <h3>Project by Idowu Victor Ayobami</h3>
+    <p><span style="font-weight: 600;">Email:</span> ezevictor559@gmail.com</p>
     <ul id="names"></ul>
     </table>
     <input type="text" name="" id="name" />
     <button onclick="AddName()">Add Names</button>
-    <button onclick="checkUnderAge(namesArray)">Sort Names</button>
+    <button onclick="sortAge(namesArray)">Sort Names</button>
     <script>
       // arrays
       const namesArray = [
@@ -53,7 +56,8 @@
         // add name if the input field is not empty
         if(inputValue){
           
-          displayNames();
+
+            displayNames();
           namesArray.innerHTML = "";
           namesArray.push(inputValue);
         console.log(namesArray);
@@ -77,14 +81,14 @@
 
       }
 
-      //filter
-      function checkUnderAge(persons) {
-        persons.filter((person) => {
-          person.age < 18;
-        });
-        checkUnderAge(name_age);
-        console.log(checkUnderAge(name_age));
+      //sorting by names Aphabetically
+      function sortAge(persons) {
+        persons.sort((a, b)=>a.localeCompare(b))
+        console.log(persons)
+
       }
+
+
     </script>
   </body>
 </html>
