@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  padding: 12px;
+  font-size: 14px;
+}
+.body-container {
+}
+.navigation-div {
+  display: flex;
+  border-bottom: 1px solid grey;
+  padding: 1px;
+}
+
+.navigation-div .search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.navigation-div .search-container input:focus {
+  border: none;
+  outline: none;
+}
+.navigation-div .search-container input {
+  border: none;
+  padding: 12px;
+  font-size: 0.8rem;
+  width: 100%;
+}
+.filter-container {
+  display: flex;
+  grid-template-columns: 1fr, 1fr, 1fr;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.filter-container .filter {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 12px;
+  padding: 12px 12px 12px 0;
+}
+.filter-container .filter select,
+.filter input {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid grey;
+  border-radius: 7px;
+}
+.find-btn {
+  display: flex;
+  justify-self: center;
+}
+/* people's data */
+.data-container {
+  display: grid;
+  grid-template-columns: 70%, 30%;
+}
+table {
+  border-spacing: 20px;
+  font-size: 12px;
+}
+table th {
+  align-content: end;
+}

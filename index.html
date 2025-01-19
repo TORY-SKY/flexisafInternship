@@ -3,28 +3,132 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search"
+    />
   </head>
   <body>
     <h1>FLEXISAF INTERNSHIP FIRST PRJECT</h1>
     <h3>Project by Idowu Victor Ayobami</h3>
-    <p><span style="font-weight: 600;">Email:</span> ezevictor559@gmail.com</p>
-    <ul id="names"></ul>
-    </table>
+    <p><span style="font-weight: 600">Email:</span> ezevictor559@gmail.com</p>
+    <div class="body-container">
+      <nav class="navigation-div">
+        <div class="search-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="30px"
+            viewBox="0 -960 960 960"
+            width="30px"
+            fill="#e8eaed"
+          >
+            <path
+              d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
+            />
+          </svg>
+          <input
+            type="text"
+            name=""
+            id="search"
+            placeholder="Search for names of people here"
+          />
+        </div>
+      </nav>
+      <!-- search filter container -->
+      <div class="filter-container">
+        <div></div>
+        <div class="filter">
+          <p>NAME</p>
+          <select name="" id="">
+            <option value="">A</option>
+            <option value="">A</option>
+            <option value="">A</option>
+            <option value="">A</option>
+          </select>
+        </div>
+        <div class="filter">
+          <p>LOCATION</p>
+          <select name="" id="">
+            <option value="">A</option>
+            <option value="">A</option>
+            <option value="">A</option>
+            <option value="">A</option>
+          </select>
+        </div>
+        <div class="filter">
+          <p>FUNCTIONAL AREA</p>
+          <input type="text" name="area" />
+        </div>
+        <div class="filter">
+          <p>KEYWORD</p>
+          <input type="text" name="keyword" placeholder="Enter keywords" />
+        </div>
+        <div class="filter">
+          <button class="find-btn">
+            <span>Find my leads</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q17 0 28.5 11.5T520-840q0 17-11.5 28.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160q133 0 226.5-93.5T800-480q0-17 11.5-28.5T840-520q17 0 28.5 11.5T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- people's data -->
+      <div class="data-container">
+        <div class="data-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Company</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="details-table"></div>
+      </div>
+    </div>
+
     <input type="text" name="" id="name" />
     <button onclick="AddName()">Add Names</button>
     <button onclick="sortAge(namesArray)">Sort Names</button>
     <button onclick="deleteName(namesArray)">delete added name</button>
-    <div behavior="" direction="" style="
-    font-size: 24px; 
-    font-weight: bold; 
-    text-align: center; 
-    margin-top: 20px; 
-    animation: blink 1.5s infinite;">Add name and check the console</div>
+    <div
+      behavior=""
+      direction=""
+      style="
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+        animation: blink 1.5s infinite;
+      "
+    >
+      Add name and check the console
+    </div>
     <style>
-       @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
     </style>
     <script>
       // arrays
@@ -62,53 +166,46 @@
       const Names = document.getElementById("names");
 
       const inputField = document.getElementById("name");
-     
-     
+
       //   adding names to the "namesArray" using the .push
       function AddName() {
         const inputValue = inputField.value.trim();
         // add name if the input field is not empty
-        if(inputValue){
-          
-
-            // displayNames();
+        if (inputValue) {
+          // displayNames();
           inputField.value = "";
 
           namesArray.innerHTML = "";
           namesArray.push(inputValue.toUpperCase());
-        console.log(namesArray);
-          
-        }else{
-          alert("input a name first")
+          console.log(namesArray);
+        } else {
+          alert("input a name first");
         }
-
 
         // function to display name on the screen
-       function displayNames(){
+        function displayNames() {
           // using (.foreach) to iterate over the names array
-          namesArray.forEach((name, index)=>{
+          namesArray.forEach((name, index) => {
             const name_list = document.getElementById("names");
-          const li_element = document.createElement("li");
-          li_element.textContent = `${index + 1 + ". " + name}`
-          name_list.appendChild(li_element);
-          inputField.value = "";
-          })
+            const li_element = document.createElement("li");
+            li_element.textContent = `${index + 1 + ". " + name}`;
+            name_list.appendChild(li_element);
+            inputField.value = "";
+          });
         }
-
       }
 
       //sorting by names Aphabetically
       function sortAge(persons) {
-        persons.sort((a, b)=>a.localeCompare(b))
-        console.log("sorted names are below:")
-        console.log( persons)
-
+        persons.sort((a, b) => a.localeCompare(b));
+        console.log("sorted names are below:");
+        console.log(persons);
       }
-function deleteName(Names){
-Names.pop();
-console.log(Names);
-}
-
+      function deleteName(Names) {
+        Names.pop();
+        console.log(Names);
+      }
     </script>
+    <script src="./index.js"></script>
   </body>
 </html>
