@@ -93,12 +93,14 @@
                 <th>Location</th>
               </tr>
             </thead>
-            <tbody>
-
-            </tbody>
+            <tbody></tbody>
           </table>
         </div>
-        <div class="details-table"></div>
+        <div class="details-table">
+          <img src="" alt="" id="image-sec" />
+          <h1 id="displayName">Name here</h1>
+          <p id="emailDisplay">abcdparameters@analogueanalysis.com</p>
+        </div>
       </div>
     </div>
 
@@ -130,82 +132,7 @@
         }
       }
     </style>
-    <script>
-      // arrays
-      const namesArray = [
-        "Ade",
-        "Tolu",
-        "Shola",
-        "Apple",
-        "Rat",
-        "Bola",
-        "Keji",
-        "Femi",
-        "Yemi",
-        "Sola",
-        "Dayo",
-        "Tope",
-        "Kunle",
-        "Nike",
-        "Wale",
-        "Jide",
-        "Seun",
-        "Tunde",
-        "Akin",
-        "Fola",
-      ];
-      const name_age = [
-        { name: "Alice", age: 12 },
-        { name: "Bryan", age: 22 },
-        { name: "Alex", age: 32 },
-        { name: "Edward", age: 12 },
-        { name: "Tory", age: 24 },
-        { name: "Juliana", age: 20 },
-      ];
-
-      const Names = document.getElementById("names");
-
-      const inputField = document.getElementById("name");
-
-      //   adding names to the "namesArray" using the .push
-      function AddName() {
-        const inputValue = inputField.value.trim();
-        // add name if the input field is not empty
-        if (inputValue) {
-          // displayNames();
-          inputField.value = "";
-
-          namesArray.innerHTML = "";
-          namesArray.push(inputValue.toUpperCase());
-          console.log(namesArray);
-        } else {
-          alert("input a name first");
-        }
-
-        // function to display name on the screen
-        function displayNames() {
-          // using (.foreach) to iterate over the names array
-          namesArray.forEach((name, index) => {
-            const name_list = document.getElementById("names");
-            const li_element = document.createElement("li");
-            li_element.textContent = `${index + 1 + ". " + name}`;
-            name_list.appendChild(li_element);
-            inputField.value = "";
-          });
-        }
-      }
-
-      //sorting by names Aphabetically
-      function sortAge(persons) {
-        persons.sort((a, b) => a.localeCompare(b));
-        console.log("sorted names are below:");
-        console.log(persons);
-      }
-      function deleteName(Names) {
-        Names.pop();
-        console.log(Names);
-      }
-    </script>
+    <script></script>
     <script src="./index.js"></script>
   </body>
 </html>

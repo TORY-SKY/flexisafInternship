@@ -1,3 +1,84 @@
+
+// first assignment
+  // arrays
+  const namesArray = [
+    "Ade",
+    "Tolu",
+    "Shola",
+    "Apple",
+    "Rat",
+    "Bola",
+    "Keji",
+    "Femi",
+    "Yemi",
+    "Sola",
+    "Dayo",
+    "Tope",
+    "Kunle",
+    "Nike",
+    "Wale",
+    "Jide",
+    "Seun",
+    "Tunde",
+    "Akin",
+    "Fola",
+  ];
+  const name_age = [
+    { name: "Alice", age: 12 },
+    { name: "Bryan", age: 22 },
+    { name: "Alex", age: 32 },
+    { name: "Edward", age: 12 },
+    { name: "Tory", age: 24 },
+    { name: "Juliana", age: 20 },
+  ];
+
+  const Names = document.getElementById("names");
+
+  const inputField = document.getElementById("name");
+
+  //   adding names to the "namesArray" using the .push
+  function AddName() {
+    const inputValue = inputField.value.trim();
+    // add name if the input field is not empty
+    if (inputValue) {
+      // displayNames();
+      inputField.value = "";
+
+      namesArray.innerHTML = "";
+      namesArray.push(inputValue.toUpperCase());
+      console.log(namesArray);
+    } else {
+      alert("input a name first");
+    }
+
+    // function to display name on the screen
+    function displayNames() {
+      // using (.foreach) to iterate over the names array
+      namesArray.forEach((name, index) => {
+        const name_list = document.getElementById("names");
+        const li_element = document.createElement("li");
+        li_element.textContent = `${index + 1 + ". " + name}`;
+        name_list.appendChild(li_element);
+        inputField.value = "";
+      });
+    }
+  }
+
+  //sorting by names Aphabetically
+  function sortAge(persons) {
+    persons.sort((a, b) => a.localeCompare(b));
+    console.log("sorted names are below:");
+    console.log(persons);
+  }
+  function deleteName(Names) {
+    Names.pop();
+    console.log(Names);
+  }
+
+// first assignment
+
+
+
 const People = [
     {
       name: "John Doe",
@@ -140,7 +221,7 @@ const People = [
       image: "https://source.unsplash.com/random/200x200?person20"
     }
   ];
-  
+  // iterating over each names
 People.forEach((person)=>{
   const tBody= document.querySelector("tbody");
 const tablerow = document.createElement("tr");
@@ -155,7 +236,21 @@ tablerow.appendChild(location).textContent = person.location;
 tBody.appendChild(tablerow);
 
 })
-People.forEach((pes)=>{
-  const TD = document.querySelectorAll("td");
-TD.addEventListener("click", (index)=>{alert(index)})
-})  
+
+//  search function for People array
+const clickFunc = ()=>{
+  const rows = document.querySelectorAll("td");
+  if(rows){
+rows.forEach((row)=>{
+      row.addEventListener("click",()=>{
+        const dispName = document.getElementById("name");
+        const dispEmail = document.getElementById("email");
+        const dispImage = document.getElementById("image");
+        
+      })
+    })
+  }else{
+    alert("some ain't right");
+  }
+}
+clickFunc();

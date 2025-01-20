@@ -4,20 +4,21 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Noto Sans", sans-serif;
-
 }
 
 body {
   font-family: "Noto Sans", sans-serif;
-  padding: 12px;
+  padding: 24px;
   font-size: 14px;
 }
 .body-container {
+  margin-top: 12px;
 }
 .navigation-div {
   display: flex;
   border-bottom: 1px solid grey;
   padding: 1px;
+  margin-bottom: 12px;
 }
 
 .navigation-div .search-container {
@@ -61,16 +62,48 @@ body {
 .find-btn {
   display: flex;
   justify-self: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  padding: 6px;
+  border-radius: 8px;
+  outline: none;
 }
 /* people's data */
 .data-container {
   display: grid;
-  grid-template-columns: 70%, 30%;
+  justify-content: space-between;
+  grid-template-columns: 70% 30%;
+  background-color: azure;
+  border-radius: 8px;
 }
 table {
   border-spacing: 20px;
-  font-size: 12px;
+  font-size: 14px;
 }
 table th {
   align-content: end;
+}
+table th {
+  background-color: black;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+}
+.details-table {
+  background-color: white;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: -10px 5px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid red;
+}
+@media only screen and (max-width: 768px) {
+  .data-container {
+    grid-template-columns: 100%;
+  }
+  .data-container .data-table {
+    margin-top: 12px;
+    font-size: 12px;
+  }
 }
